@@ -1,0 +1,33 @@
+{{>header}}
+{{>nav}}
+<section class="my-5 container">
+    <div class="row mb-3 justifiy-content-end">
+        <a href="/" class="btn btn-primary col-2">Home</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              
+                <th>Operation</th>
+                <th>Value</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+              
+              {{#each ops}}
+            <tr>
+                <td>{{this.op}}</td>
+                <td>{{this.value}}</td>
+                <td>{{this.date}}</td>
+            </tr>
+             {{/each}}
+            {{!-- {{/if}} --}}
+          
+           
+        </tbody>
+    </table>
+</section>
+{{>footer}}
+
+
