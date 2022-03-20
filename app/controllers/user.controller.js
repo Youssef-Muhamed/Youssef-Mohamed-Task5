@@ -81,7 +81,14 @@ const deleteUser = (req, res) => {
             .deleteOne({
                 _id: new ObjectId(userId)
             })
-            .then(() => res.redirect("/"))
+            .then(() => {
+                conn.collection("op")
+            .deleteMany({
+                id:userId
+            })
+        .then(()=>
+                res.redirect("/"))
+            })
             .catch(e => res.send(e))
     })
 }
